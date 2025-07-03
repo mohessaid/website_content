@@ -9,10 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fire repository_dispatch
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
           repository: mohessaid/mohessaid
           event-type: content-updated
-        env:
-          GITHUB_TOKEN: ${{ secrets.CONTENT_DISPATCH_TOKEN }}
+          token: ${{ secrets.CONTENT_DISPATCH_TOKEN }}
 
